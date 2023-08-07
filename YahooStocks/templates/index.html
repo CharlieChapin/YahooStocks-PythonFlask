@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>--><!--Google this-->
+    <!--<script src="{{ url_for('serve_static', path='ticker_input.js') }}"></script>-->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('serve_static', path='style.css') }}">
+    <title>Yahoo Finance Stock Data</title>
+    <title>Document</title>
+    
+</head>
+<body>
+    <h1>
+        <span class="yahoo">Yahoo</span>
+        <span class="finance">Finance</span>
+        <span class="stock">Stock</span>
+        <span class="data">Data</span>
+    </h1>
+    <p> Input Yahoo stock tickers separated by a comma eg. (aapl,msft,tsla,^gspc)</p>
+    <form id="stocks-form" method="POST" action="/">
+        {{ form.hidden_tag() }}
+        {{ form.tickers.label }} {{ form.tickers }}<br>
+        {{ form.start_date.label }} {{ form.start_date }}<br>
+        {{ form.end_date.label }} {{ form.end_date }}<br>
+        {{ form.interval.label }} {{ form.interval }}<br>
+        {{ form.submit() }}
+    </form>
+</body>
+</html
